@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}">
 <head>
-     <!-- Optional script inclusion -->
-    <script src="https://www.paypal.com/sdk/js?client-id=ARAyMGJzwx7gX0r9CtFhWfGwU8WoHwevy9IkFAFbwXxfeUiQJQV3RztZgijykk3kr_SANLc8X6tfFEVH"></script>
+    <!-- Include PayPal SDK with live client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ARVHeik3WMD7s01x9hZMCXZ1ZPhxTGYpGjgk4EFeDSF5DvIOzTZMi_38I1KwUvb0y3G63tggCIJwBfzp&currency=USD"></script>
 
     <!-- Dynamic page title with fallback for homepage -->
     <title>{{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}</title>
@@ -22,7 +22,6 @@
     <!-- Character set definition -->
     <meta charset="utf-8">
 </head>
-<script src="https://www.paypal.com/sdk/js?client-id=ARAyMGJzwx7gX0r9CtFhWfGwU8WoHwevy9IkFAFbwXxfeUiQJQV3RztZgijykk3kr_SANLc8X6tfFEVH&currency=USD"></script>
 
 <body>
     <!-- Website header -->
@@ -31,7 +30,6 @@
             <h1>{{ .Site.Title }}</h1>
             <p>All works pressed in Manhattan, baby</p>
         </div>
-        
     </header>
 
     <!-- Main content block -->
@@ -44,7 +42,5 @@
         <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.</p>
     </footer>
 
- 
-
-
+</body>
 </html>
