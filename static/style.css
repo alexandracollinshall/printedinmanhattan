@@ -1,0 +1,150 @@
+/* Global styles: Ensures body and html take full height and sets a default font */
+body, html {
+    height: 100%;  /* Ensures the page takes the full height */
+    margin: 0;  /* Removes default margin */
+    font-family: sans-serif;  /* Sets the font for the page */
+}
+
+/* Header: Flexbox layout for alignment of logo and navigation */
+header {
+    display: flex;
+    justify-content: space-between;  /* Space between the logo and navigation */
+    align-items:top;  /* Centers items vertically */
+    padding: 10px;  /* Adds space inside the header */
+}
+
+/* Logo title styles */
+header .logo h1 {
+    font-size: 2rem;  /* Sets the size of the title */
+    margin: 0;  /* Removes default margin */
+}
+
+/* Logo subtitle styles */
+header .logo p {
+    font-size: 1rem;  /* Sets the size of the subtitle */
+    color: #000000;  /* color */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;  /* Removes list bullets */
+    display: flex;  /* Uses flexbox for horizontal layout */
+    gap: 20px;  /* Adds space between links */
+}
+
+/* Navigation link styles */
+nav a {
+    text-decoration: none;  /* Removes underline from links */
+    font-size: .75rem;  /* Sets font size */
+    color: #000;  /* color */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    text-decoration: underline;  /* Underline on hover */
+}
+
+/* Main content area padding to avoid overlap with the footer */
+main {
+    padding-bottom: 50px;  /* Adds space below content for the footer */
+}
+
+
+/* Image gallery layout with flexbox */
+.image-gallery {
+    display: flex;  /* Flexbox layout for images */
+    justify-content: space-around;  /* Evenly spaces images across the screen */
+    gap: 20px;  /* Adds space between images */
+    padding: 0 5%;  /* Adds space on the left and right sides of the gallery */
+}
+
+/* Image item layout */
+.image-item {
+    position: relative;  /* Ensures proper positioning for caption */
+    width: 33%;  /* Each image takes up one-third of the gallery */
+    padding-bottom: 33%;  /* Maintains square aspect ratio */
+}
+
+/* Image styles: Ensures images cover the entire item area */
+img {
+    position: absolute;  /* Positions image within its container */
+    top: 0;  /* Aligns image to the top */
+    left: 0;  /* Aligns image to the left */
+    width: 100%;  /* Ensures image fills the container width */
+    height: 100%;  /* Ensures image fills the container height */
+    object-fit: cover;  /* Maintains image aspect ratio while covering the area */
+}
+
+/* Caption style: Positioned at the bottom of the image */
+.caption {
+    position: absolute;  /* Positions caption over the image */
+    bottom: -30px;  /* Moves the caption slightly below the image */
+    left: 0;  
+    right: 0;  
+    text-align: left;  
+    font-size: 6pt;  
+    color: #000;  
+    padding: 1px 0;  
+}
+
+
+/* Footer styles: Fixed position at the bottom */
+footer {
+    text-align: center;  /* Centers the footer text */
+    padding: 10px;  /* Adds padding inside the footer */
+    position: fixed;  /* Fixes the footer at the bottom */
+    bottom: 0;  /* Positions it at the very bottom of the screen */
+    width: 100%;  /* Ensures the footer spans the full width */
+    background-color: #fff;  /* White background */
+    font-size: 6pt;
+}
+
+/* Initially hide the Add to Cart button */
+.add-to-cart {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: .75rem;
+    cursor: pointer;
+    visibility: hidden;  /* Button is hidden by default */
+}
+
+/* Show the button when the image is hovered */
+.image-item:hover .add-to-cart {
+    visibility: visible;  /* Makes the button visible on hover */
+}
+
+
+/* Cart Styles */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.cart-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cart-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* PayPal button container styling */
+#paypal-button-container {
+    margin-top: 50px;
+    color: #000000;
+}
+
+
+.image-item img:hover {
+    transform: scale(1.05);
+}

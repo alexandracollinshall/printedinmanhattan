@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+<head>
+     <!-- Optional script inclusion -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ARAyMGJzwx7gX0r9CtFhWfGwU8WoHwevy9IkFAFbwXxfeUiQJQV3RztZgijykk3kr_SANLc8X6tfFEVH"></script>
+
+    <!-- Dynamic page title with fallback for homepage -->
+    <title>{{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}</title>
+    
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- Stylesheet linking -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/style.css">
+    
+    <!-- Meta description for SEO -->
+    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
+    
+    <!-- Responsive design meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Character set definition -->
+    <meta charset="utf-8">
+</head>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+
+<body>
+    <!-- Website header -->
+    <header>
+        <div class="logo">
+            <h1>{{ .Site.Title }}</h1>
+            <p>All works pressed in Manhattan, baby</p>
+        </div>
+        
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ .Site.BaseURL }}">home</a></li>
+                <li><a href="{{ .Site.BaseURL }}cart">cart</a></li>
+                <li><a href="{{ .Site.BaseURL }}about">about</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content block -->
+    <main>
+        {{ block "main" . }}{{ .Content }}{{ end }}
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.</p>
+    </footer>
+
+ 
+
+
+</html>
