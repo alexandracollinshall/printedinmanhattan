@@ -1,3 +1,3 @@
-baseURL = "http://localhost:1313"
+baseURL = "https://printedinmanhattan.netlify.app/"
 languageCode = 'en-us'
 title = 'Printed in Manhattan'
