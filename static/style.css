@@ -5,64 +5,22 @@ body, html {
     font-family: sans-serif;  /* Sets the font for the page */
 }
 
-/* Header: Flexbox layout for alignment of logo and navigation */
-header {
-    display: flex;
-    justify-content: space-between;  /* Space between the logo and navigation */
-    align-items:top;  /* Centers items vertically */
-    padding: 10px;  /* Adds space inside the header */
-}
-
-/* Logo title styles */
-header .logo h1 {
-    font-size: 2rem;  /* Sets the size of the title */
-    margin: 0;  /* Removes default margin */
-}
-
-/* Logo subtitle styles */
-header .logo p {
-    font-size: 1rem;  /* Sets the size of the subtitle */
-    color: #000000;  /* color */
-}
-
-/* Navigation styles */
-nav ul {
-    list-style: none;  /* Removes list bullets */
-    display: flex;  /* Uses flexbox for horizontal layout */
-    gap: 20px;  /* Adds space between links */
-}
-
-/* Navigation link styles */
-nav a {
-    text-decoration: none;  /* Removes underline from links */
-    font-size: .75rem;  /* Sets font size */
-    color: #000;  /* color */
-}
-
-/* Hover effect for navigation links */
-nav a:hover {
-    text-decoration: underline;  /* Underline on hover */
-}
-
-/* Main content area padding to avoid overlap with the footer */
-main {
-    padding-bottom: 50px;  /* Adds space below content for the footer */
-}
-
-
 /* Image gallery layout with flexbox */
 .image-gallery {
     display: flex;  /* Flexbox layout for images */
-    justify-content: space-around;  /* Evenly spaces images across the screen */
+    justify-content: space-between;  /* Evenly spaces images across the screen */
     gap: 20px;  /* Adds space between images */
     padding: 0 5%;  /* Adds space on the left and right sides of the gallery */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
-/* Image item layout */
+/* Image item layout: Ensured to maintain 5:7 aspect ratio */
 .image-item {
     position: relative;  /* Ensures proper positioning for caption */
-    width: 33%;  /* Each image takes up one-third of the gallery */
-    padding-bottom: 33%;  /* Maintains square aspect ratio */
+    width: 30%;  /* Each image takes up a third of the gallery width, adjusted to ensure wrapping */
+    padding-bottom: 42.86%;  /* Aspect ratio 5:7 (7/5 = 1.4) */
+    box-sizing: border-box; /* Prevents overflow issues */
+    margin-bottom: 20px;  /* Adds spacing between items on smaller screens */
 }
 
 /* Image styles: Ensures images cover the entire item area */
@@ -87,6 +45,17 @@ img {
     padding: 1px 0;  
 }
 
+/* Sub-caption style: Positioned below the caption */
+.sub-caption {
+    position: absolute;
+    bottom: -40px;  /* Adjust this value to give space below the main caption */
+    left: 0;
+    right: 0;
+    text-align: left;
+    font-size: 6pt;  /* Adjust font size as needed */
+    font-weight: 300; /* Lighter font weight */
+    color: #777;  /* Light gray color for the sub-caption */
+}
 
 /* Footer styles: Fixed position at the bottom */
 footer {
@@ -98,27 +67,6 @@ footer {
     background-color: #fff;  /* White background */
     font-size: 6pt;
 }
-
-/* Initially hide the Add to Cart button */
-.add-to-cart {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: .75rem;
-    cursor: pointer;
-    visibility: hidden;  /* Button is hidden by default */
-}
-
-/* Show the button when the image is hovered */
-.image-item:hover .add-to-cart {
-    visibility: visible;  /* Makes the button visible on hover */
-}
-
 
 /* Cart Styles */
 .cart-container {
@@ -143,7 +91,6 @@ footer {
     margin-top: 50px;
     color: #000000;
 }
-
 
 .image-item img:hover {
     transform: scale(1.05);
