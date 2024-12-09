@@ -47,59 +47,51 @@ h2 {
 .image-item img:hover {
     transform: scale(1.05);
 }
-
-/* Captions */
-.caption, .sub-caption, .availability {
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: left;
-    font-size: 6pt;
-    font-weight: 300;
-    padding: 1px 0;
+/* Captions container */
+.captions {
+    padding-top: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Caption styles */
 .caption {
-    bottom: -30px;
+    font-size: 6pt;
+    font-weight: bold;
     color: #000;
+    margin-bottom: 5px;
 }
 
 .sub-caption {
-    bottom: -50px;
+    font-size: 5pt;
+    font-weight: lighter;
     color: #777;
+    margin-bottom: 5px;
 }
 
 .availability {
-    bottom: -60px;
+    font-size: 5pt;
+    font-weight: lighter;
     color: #777;
-}
-
-/* Button styles */
-.buy-now, .purchase {
-    position: absolute;
-    bottom: -90px;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    color: #fff;
-    font-size: 8pt;
-    font-weight: bold;
-    text-align: center;
-    padding: 5px 0;
-    cursor: pointer;
-    display: inline-block;
-    text-transform: lowercase;
-    width: 100%;
+    margin-bottom: 10px;
 }
 
 .purchase {
     font-size: 6pt;
     text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
 }
 
 .purchase:hover {
     background-color: #5b700b;
 }
+
 
 /* Footer */
 footer {
