@@ -48,19 +48,21 @@ h2 {
     transform: scale(1.05);
 }
 
-/* Captions */
-.caption, .sub-caption, .availability {
+/* Captions container */
+.captions {
     position: absolute;
     left: 0;
     right: 0;
     text-align: left;
+    bottom: -80px;
+    color: #000;
     font-size: 6pt;
     font-weight: 300;
     padding: 1px 0;
 }
-
+/*Captions individual elements*/
 .caption {
-    bottom: -30px;
+    bottom: -60px;
     color: #000;
 }
 
@@ -73,9 +75,9 @@ h2 {
     bottom: -60px;
     color: #777;
 }
-
 /* Button styles */
-.buy-now, .purchase {
+
+.purchase, .purchase {
     position: absolute;
     bottom: -90px;
     left: 0;
@@ -88,14 +90,10 @@ h2 {
     padding: 5px 0;
     cursor: pointer;
     display: inline-block;
-    text-transform: lowercase;
+    text-transform: uppercase;
     width: 100%;
 }
 
-.purchase {
-    font-size: 6pt;
-    text-transform: uppercase;
-}
 
 .purchase:hover {
     background-color: #5b700b;
@@ -134,4 +132,16 @@ footer {
 #paypal-button-container {
     margin-top: 50px;
     color: #000;
+}
+
+/* Additional spacing for responsive design (if needed) */
+@media screen and (max-width: 768px) {
+ 
+
+    .captions {
+        bottom: -100px; /* Adjust position for mobile screens */
+    }
+    .purchase {
+        bottom: -50px; /* Adjust position for mobile screens */
+    }
 }
