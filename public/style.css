@@ -2,21 +2,19 @@
 body, html {
     height: 100%;
     margin: 10pt;
-    font-family: 'Century Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif; /* Sets Century Gothic for all text */
     font-weight: lighter;
 }
 
 /* Header and Sub-header styles */
-h1, h2 {
-    font-weight: normal;
-}
-
 h1 {
     font-size: 1rem; /* Font size for the main header */
+    font-weight: normal;
 }
 
 h2 {
     font-size: .57rem; /* Font size for the sub-header */
+    font-weight: lighter;
 }
 
 /* Image gallery layout */
@@ -24,7 +22,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
     padding: 0 5%;
 }
 
@@ -32,14 +29,11 @@ h2 {
 .image-item {
     position: relative;
     width: 30%;
-    padding-top: 42.86%; /* Maintain 5:7 aspect ratio with padding-top */
+    padding-bottom: 42.86%; /* 5:7 aspect ratio */
     margin-bottom: 20px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column; /* Ensure that captions stack below the images */
 }
 
-/* Image within the item */
 .image-item img {
     position: absolute;
     top: 0;
@@ -93,6 +87,7 @@ h2 {
     text-align: center;
     padding: 5px 0;
     cursor: pointer;
+    display: inline-block;
     text-transform: lowercase;
     width: 100%;
 }
@@ -139,43 +134,4 @@ footer {
 #paypal-button-container {
     margin-top: 50px;
     color: #000;
-}
-
-/* Media queries for mobile view */
-@media (max-width: 768px) {
-    .image-item {
-        width: 48%; /* Two images per row on mobile */
-    }
-
-    .caption, .sub-caption, .availability {
-        font-size: 8pt; /* Larger text for mobile */
-        padding-bottom: 8px; /* Tighter spacing */
-    }
-
-    .buy-now, .purchase {
-        font-size: 6pt; /* Adjust button text for mobile */
-    }
-
-    .image-gallery {
-        gap: 15px; /* Adjust gap on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .image-item {
-        width: 100%; /* Full width on small screens */
-        padding-top: 100%; /* Maintain aspect ratio on small screens */
-    }
-
-    .image-gallery {
-        gap: 10px; /* Adjust gap for smaller screens */
-    }
-
-    .caption, .sub-caption, .availability {
-        font-size: 10pt; /* Increase font size on small screens */
-    }
-
-    .buy-now, .purchase {
-        font-size: 7pt; /* Adjust button size */
-    }
 }
