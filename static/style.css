@@ -2,18 +2,18 @@
 body, html {
     height: 100%;
     margin: 10pt;
-    font-family: 'Century Gothic', sans-serif; /* Sets Century Gothic for all text */
+    font-family: 'Century Gothic', sans-serif;
     font-weight: lighter;
 }
 
 /* Header and Sub-header styles */
 h1 {
-    font-size: 1rem; /* Font size for the main header */
+    font-size: 1rem;
     font-weight: normal;
 }
 
 h2 {
-    font-size: .57rem; /* Font size for the sub-header */
+    font-size: .57rem;
     font-weight: lighter;
 }
 
@@ -29,10 +29,14 @@ h2 {
 /* Image item layout */
 .image-item {
     position: relative;
-    width: 30%;
-    padding-bottom: 42.86%; /* 5:7 aspect ratio */
+    width: 48%; /* Adjust width for 2-column layout */
+    padding-bottom: 68%; /* Maintain 5:7 aspect ratio */
     margin-bottom: 20px;
     box-sizing: border-box;
+    /* Flexbox for ensuring no overlap and proper spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .image-item img {
@@ -51,36 +55,27 @@ h2 {
 
 /* Captions */
 .caption, .sub-caption, .availability {
-    position: absolute;
-    left: 0;
-    right: 0;
     text-align: left;
     font-size: 6pt;
     font-weight: 300;
     padding: 1px 0;
+    margin: 0;
 }
 
 .caption {
-    bottom: -30px;
     color: #000;
 }
 
-.sub-caption {
-    bottom: -50px;
+.sub-caption, .availability {
     color: #777;
 }
 
-.availability {
-    bottom: -60px;
-    color: #777;
+.caption, .sub-caption, .availability {
+    padding-bottom: 10px; /* Add padding between texts */
 }
 
 /* Button styles */
 .buy-now, .purchase {
-    position: absolute;
-    bottom: -90px;
-    left: 0;
-    right: 0;
     background-color: #000;
     color: #fff;
     font-size: 8pt;
@@ -91,6 +86,7 @@ h2 {
     display: inline-block;
     text-transform: lowercase;
     width: 100%;
+    margin-top: 10px; /* Ensure buttons are not too close to text */
 }
 
 .purchase {
@@ -135,4 +131,44 @@ footer {
 #paypal-button-container {
     margin-top: 50px;
     color: #000;
+}
+
+/* Media queries for mobile view */
+@media (max-width: 768px) {
+    .image-item {
+        width: 48%; /* Two images per row on mobile */
+        padding-bottom: 68%; /* Maintain aspect ratio */
+    }
+
+    .caption, .sub-caption, .availability {
+        font-size: 8pt; /* Larger text for easier readability on mobile */
+        padding-bottom: 8px; /* Slightly tighter spacing on mobile */
+    }
+
+    .buy-now, .purchase {
+        font-size: 6pt; /* Adjust button text size for mobile */
+    }
+
+    .image-gallery {
+        gap: 15px; /* Adjust gap for better mobile layout */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-item {
+        width: 100%; /* Full width for smaller screens */
+        padding-bottom: 100%; /* Ensure images maintain their aspect ratio */
+    }
+
+    .image-gallery {
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+
+    .caption, .sub-caption, .availability {
+        font-size: 10pt; /* Increase font size for small screens */
+    }
+
+    .buy-now, .purchase {
+        font-size: 7pt; /* Adjust button size for small screens */
+    }
 }
