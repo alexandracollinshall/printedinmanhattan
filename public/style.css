@@ -143,5 +143,6 @@ footer {
     }
     .purchase {
         bottom: -50px; /* Adjust position for mobile screens */
+        font-size: 4pt;
     }
 }
