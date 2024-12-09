@@ -7,14 +7,16 @@ body, html {
 }
 
 /* Header and Sub-header styles */
-h1 {
-    font-size: 1rem;
+h1, h2 {
     font-weight: normal;
 }
 
+h1 {
+    font-size: 1rem; /* Font size for the main header */
+}
+
 h2 {
-    font-size: .57rem;
-    font-weight: lighter;
+    font-size: .57rem; /* Font size for the sub-header */
 }
 
 /* Image gallery layout */
@@ -29,16 +31,15 @@ h2 {
 /* Image item layout */
 .image-item {
     position: relative;
-    width: 48%; /* Adjust width for 2-column layout */
-    padding-bottom: 68%; /* Maintain 5:7 aspect ratio */
+    width: 30%;
+    padding-top: 42.86%; /* Maintain 5:7 aspect ratio with padding-top */
     margin-bottom: 20px;
     box-sizing: border-box;
-    /* Flexbox for ensuring no overlap and proper spacing */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; /* Ensure that captions stack below the images */
 }
 
+/* Image within the item */
 .image-item img {
     position: absolute;
     top: 0;
@@ -55,27 +56,36 @@ h2 {
 
 /* Captions */
 .caption, .sub-caption, .availability {
+    position: absolute;
+    left: 0;
+    right: 0;
     text-align: left;
     font-size: 6pt;
     font-weight: 300;
     padding: 1px 0;
-    margin: 0;
 }
 
 .caption {
+    bottom: -30px;
     color: #000;
 }
 
-.sub-caption, .availability {
+.sub-caption {
+    bottom: -50px;
     color: #777;
 }
 
-.caption, .sub-caption, .availability {
-    padding-bottom: 10px; /* Add padding between texts */
+.availability {
+    bottom: -60px;
+    color: #777;
 }
 
 /* Button styles */
 .buy-now, .purchase {
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    right: 0;
     background-color: #000;
     color: #fff;
     font-size: 8pt;
@@ -83,10 +93,8 @@ h2 {
     text-align: center;
     padding: 5px 0;
     cursor: pointer;
-    display: inline-block;
     text-transform: lowercase;
     width: 100%;
-    margin-top: 10px; /* Ensure buttons are not too close to text */
 }
 
 .purchase {
@@ -137,27 +145,26 @@ footer {
 @media (max-width: 768px) {
     .image-item {
         width: 48%; /* Two images per row on mobile */
-        padding-bottom: 68%; /* Maintain aspect ratio */
     }
 
     .caption, .sub-caption, .availability {
-        font-size: 8pt; /* Larger text for easier readability on mobile */
-        padding-bottom: 8px; /* Slightly tighter spacing on mobile */
+        font-size: 8pt; /* Larger text for mobile */
+        padding-bottom: 8px; /* Tighter spacing */
     }
 
     .buy-now, .purchase {
-        font-size: 6pt; /* Adjust button text size for mobile */
+        font-size: 6pt; /* Adjust button text for mobile */
     }
 
     .image-gallery {
-        gap: 15px; /* Adjust gap for better mobile layout */
+        gap: 15px; /* Adjust gap on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .image-item {
-        width: 100%; /* Full width for smaller screens */
-        padding-bottom: 100%; /* Ensure images maintain their aspect ratio */
+        width: 100%; /* Full width on small screens */
+        padding-top: 100%; /* Maintain aspect ratio on small screens */
     }
 
     .image-gallery {
@@ -165,10 +172,10 @@ footer {
     }
 
     .caption, .sub-caption, .availability {
-        font-size: 10pt; /* Increase font size for small screens */
+        font-size: 10pt; /* Increase font size on small screens */
     }
 
     .buy-now, .purchase {
-        font-size: 7pt; /* Adjust button size for small screens */
+        font-size: 7pt; /* Adjust button size */
     }
 }
