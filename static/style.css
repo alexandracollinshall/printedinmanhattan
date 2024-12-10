@@ -2,17 +2,17 @@
 body, html {
     height: 100%;
     margin: 10pt;
-    font-family: 'Century Gothic', sans-serif; /* Sets Century Gothic for all text */
-    font-weight: lighter;
+    font-family: 'Lucida Grande', sans-serif;
 }
 
 /* Header and Sub-header styles */
 h1 {
+    font-family: 'Lucida Grande', sans-serif;
     font-size: 1rem; /* Font size for the main header */
-    font-weight: normal;
 }
 
 h2 {
+    font-family: 'Lucida Grande', sans-serif;
     font-size: .57rem; /* Font size for the sub-header */
     font-weight: lighter;
 }
@@ -55,25 +55,30 @@ h2 {
     right: 0;
     text-align: left;
     bottom: -80px;
-    color: #000;
-    font-size: 6pt;
-    font-weight: 300;
     padding: 1px 0;
 }
 /*Captions individual elements*/
 .caption {
+   
+    font-size: 6pt;
+    font-weight: bold;
     bottom: -60px;
     color: #000;
+
 }
 
 .sub-caption {
+    font-size: 6pt;
     bottom: -50px;
     color: #777;
+
 }
 
 .availability {
+    font-size: 6pt;
     bottom: -60px;
     color: #777;
+
 }
 /* Button styles */
 
@@ -110,24 +115,6 @@ footer {
     font-size: 6pt;
 }
 
-/* Cart styles */
-.cart-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-}
-
-.cart-container h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.cart-container p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
 /* PayPal button container */
 #paypal-button-container {
     margin-top: 50px;
@@ -146,3 +133,4 @@ footer {
         font-size: 4pt;
     }
 }
+
